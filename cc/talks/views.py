@@ -34,3 +34,8 @@ class TalkCreateView(views.LoginRequiredMixin, generic.CreateView):
         self.object.user = self.request.user
         self.object.save()
         return super(TalkCreateView, self).form_valid(form)
+
+
+class TalksUpdateView(RestrictToUserMixin, generic.UpdateView):
+    model = models.TalkList
+    form_class = forms.TalkListForm
