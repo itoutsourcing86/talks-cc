@@ -1,0 +1,24 @@
+{% extends '_base_layout/base.html' %}
+
+{% block title %} List | {{ block.super }} {% endblock %}
+
+{% block headline %}<h1>Your lists</h1>{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-6">
+        <ul class="list-group">
+            {% for list in lists %}
+            <li class="list-group-item">
+                <a href="{{ list.get_absolute_url }}">{{ list }}</a>
+            </li>
+            {% empty %}
+            <li class="list-group-item">You have no lists</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-sm-6">
+        <p><a href="#" class="btn">Create a new list</a></p>
+    </div>
+</div>
+{% endblock %}

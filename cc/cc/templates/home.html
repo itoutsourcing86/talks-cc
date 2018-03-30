@@ -1,0 +1,3 @@
+{% extends '_base_layout/base.html' %}
+{% block headline %}Welcome to the talks app!{% endblock headline %}
+{% block content %}<p>Howdy {% if user.is_authenticated %}{{ user.username }}{% endif %}!</p>{% endblock %}

@@ -1,0 +1,19 @@
+{% extends '_base_layout/base.html' %}
+
+{% block title %}{{ object.name }} | {{ block.super }}{% endblock %}
+
+{% block headline %}
+<h1>{{ object.name }}</h1>
+<h2>Your lists</h2>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-6">
+        <p>Talks go here</p>
+    </div>
+    <div class="col-sm-6">
+        <p><a href="{% url 'list' %}">Back to lists</a></p>
+    </div>
+</div>
+{% endblock %}
