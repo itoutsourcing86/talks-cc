@@ -5,3 +5,4 @@ from . import models
 
 
 admin.site.register(models.TalkList)
+admin.site.register(models.Talk)
