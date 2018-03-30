@@ -15,7 +15,7 @@ class TalkList(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('detail', args=[self.slug,])
+        return reverse('detail', args=[self.slug, ])
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
