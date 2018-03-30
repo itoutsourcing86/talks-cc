@@ -1,0 +1,10 @@
+{% extends '_base_layout/base.html' %}
+
+{% block title %}Create | {{ block.super }}{% endblock %}
+
+{% block headline %}<h1>Create a new list</h1>{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+{% crispy form %}
+{% endblock %}
