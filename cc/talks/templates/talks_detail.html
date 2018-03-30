@@ -10,10 +10,21 @@
 {% block content %}
 <div class="row">
     <div class="col-sm-6">
-        <p>Talks go here</p>
+        {% for talk in object.talks.all %}
+        {% include '_talks.html' %}
+        {% endfor %}
     </div>
     <div class="col-sm-6">
         <p><a href="{% url 'list' %}">Back to lists</a></p>
+        {% load crispy_forms_tags %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="anel-title">Add new talk</h1>
+            </div>
+            <div class="panel-body">
+                {% crispy form %}
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

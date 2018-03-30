@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 from django.template.defaultfilters import slugify
 from django.urls import reverse
+from django.utils import timezone
 
 
 class TalkList(models.Model):

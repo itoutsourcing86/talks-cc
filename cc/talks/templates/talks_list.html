@@ -10,7 +10,7 @@
         <ul class="list-group">
             {% for list in lists %}
             <li class="list-group-item">
-                <a href="{{ list.get_absolute_url }}">{{ list }}</a>
+                <a href="{{ list.get_absolute_url }}">{{ list }} <span class="badge">{{ list.talk_count }}</span></a>
             </li>
             {% empty %}
             <li class="list-group-item">You have no lists</li>

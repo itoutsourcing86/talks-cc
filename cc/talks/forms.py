@@ -39,8 +39,8 @@ class TalkForm(forms.ModelForm):
             ButtonHolder(Submit('add', 'Add', css_class='btn btn-success'))
         )
 
-    def clean(self):
-        when = self.cleaned_data.get('when')
+    def clean_when(self):
+        when = self.cleaned_data['when']
         start = datetime.datetime(2018, 3, 30).replace(tzinfo=utc)
         end = datetime.datetime(2018, 4, 10).replace(tzinfo=utc)
         if not start < when < end:
